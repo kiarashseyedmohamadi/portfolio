@@ -1,0 +1,30 @@
+<!-- اول، در head اضافه کن -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- سپس فوترت -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-top-left">
+      Code your dreams
+    </div>
+    <div class="footer-top-right">
+      <div class="footer-columns">
+        <div class="container">
+        <ul class="footer-follow">
+          <li class="follow-title">Follow</li>
+          <li><a href="https://www.instagram.com/kiarashseyedmohamadi" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/kiarash-seyedmohamadi-06b458377/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/kiarashseyedmohamadi" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+        </ul>
+        </div>
+        <div class="container">
+          <ul class="footer-follow">
+            <li class="follow-title">Info</li>
+            <li><a href="{% url 'main:contact' %}">Contact Me</a></li>
+            <li><a href="{% url 'main:about' %}">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

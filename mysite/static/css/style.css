@@ -1,0 +1,342 @@
+/* ====== تنظیمات کلی ====== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Vazirmatn', sans-serif;
+  line-height: 1.8;
+  color: #f1f1f1;
+  background: linear-gradient(
+    to bottom,
+    #111 0%,
+    #222 15%,
+    #444 40%,
+    #888 70%,
+    #fff 100%
+  );
+  scroll-behavior: smooth;
+}
+
+/* ====== لینک‌ها ====== */
+a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ====== هدر نئونی ====== */
+nav.navbar {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  padding: 0rem 2rem;
+  box-shadow: 0 0 6px #00f0ff, 0 0 12px #00f0ff, 0 0 20px #00f0ff;
+  border-radius: 14px;
+  margin: 1rem auto;
+  max-width: 1200px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+nav.navbar:hover {
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+}
+nav.navbar .navbar-brand {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+}
+nav.navbar a.nav-link {
+  color: #fff;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+nav.navbar a.nav-link:hover {
+  color: #00f0ff;
+  transform: scale(1.05);  /* کمی بزرگ شود */
+  text-shadow: 0 0 5px #00f0ff,
+               0 0 10px #00f0ff,
+               0 0 20px #00f0ff;
+}
+
+
+/* ====== افکت نئون برای Home و لینک‌ها ====== */
+nav.navbar .navbar-brand:hover,
+nav.navbar a.nav-link:hover {
+    color: #00f0ff;
+    transform: scale(1.05); /* کمی بزرگ شود */
+    text-shadow: 0 0 5px #00f0ff,
+                 0 0 10px #00f0ff,
+                 0 0 20px #00f0ff;
+}
+
+
+/* ====== سکشن‌ها ====== */
+.section {
+  padding: 8rem 2rem;
+  background: transparent;
+  position: relative;
+}
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ====== هیرو ====== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 6.2rem;
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: left;       /* متن از ابتدای خط چپ‌چین شود */
+  line-height: 1;         /* فاصله بین خطوط دقیقاً روی هم */
+  display: inline-block;  /* اجازه می‌دهد ارتفاع متن دقیقاً به اندازه محتوا باشد */
+}
+
+
+.hero p {
+    font-size: 1.3rem;
+    color: #ddd;
+    max-width: 500px;
+    line-height: 1.6;
+    text-align: justify; /* دو خط متن هم‌تراز بشن */
+}
+
+.hero p::after {
+    content: "";
+    display: inline-block;
+   
+}
+
+
+/* ====== کارت‌های پروژه نئونی ====== */
+.project-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid #00f0ff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  color: #fff;
+  transition: all 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 8px #00f0ff, 0 0 16px #00f0ff, 0 0 24px #00f0ff;
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff;
+  border-color: #00f0ff;
+}
+
+/* ====== دکمه‌ها ====== */
+.btn-dark {
+  background: #fff !important;
+  color: #111 !important;
+  border-radius: 35px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;       /* برای وسط‌چین شدن */
+  width: 50%;           /* نیمه عرض */
+  max-width: 200px;     /* محدود کردن بیشینه عرض */
+  margin: 0 auto;       /* وسط‌چین */
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+.btn-dark:hover {
+  background: #f1f1f1 !important;
+  color: #111 !important;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+/* ====== فوتر ====== */
+footer {
+  padding: 3rem 1rem;
+  background: rgba(0,0,0,0.85);
+  border-top: 2px solid #00f0ff;
+  border-radius: 14px;
+  max-width: 1200px;
+  margin: 3rem auto 1.5rem auto;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 8px #00f0ff, 0 0 16px #00f0ff, 0 0 24px #00f0ff;
+  font-family: 'Vazirmatn', sans-serif;
+  direction: ltr; /* برای چپ/راست درست */
+}
+
+/* بخش بالا فوتر */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* متن بالا سمت چپ */
+.footer-top-left {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: left;
+}
+
+/* ستون‌ها سمت راست */
+.footer-top-right {
+  display: flex;
+  justify-content: flex-end;
+  max-width: calc(100% - 200px); /* فاصله کافی برای متن سمت چپ */
+}
+
+.footer-top-right .footer-columns {
+  display: flex;
+  gap: 20px;          /* فاصله بین ستون‌ها */
+  flex-wrap: nowrap;   /* جلوگیری از رفتن ستون‌ها زیر هم */
+}
+
+.footer-top-right .container {
+  flex: 1 1 auto;     /* ستون‌ها عرض قابل انعطاف داشته باشند */
+  min-width: 120px;   /* حداقل عرض ستون */
+}
+
+/* لیست عمودی در ستون‌ها */
+.footer-follow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.footer-follow li { font-size: 1rem; }
+
+.footer-follow .follow-title {
+  color: #fff;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.footer-follow a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-follow a:hover {
+  color: #00f0ff;
+  transform: scale(1.1);
+}
+
+.profile-image {
+    border: 3px solid #00f0ff;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 350px; /* هر عددی که خواستی */
+    height: auto;
+}
+
+
+
+
+/* ردیف عنوان — مطمئن می‌شویم خط تمام طول رو اشغال کند */
+.hero-title .title-row {
+  display: flex;
+  flex-direction: row !important;
+  direction: ltr !important;
+  align-items: center;
+  gap: 0.6rem;       /* کمی کمتر از قبل */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* خودِ خط: نازک‌تر، بدون درخشش، تا انتها کشیده */
+.hero-title .title-line {
+  order: 1;
+  flex: 1 1 auto;              /* تمام فضای باقیمانده را پر می‌کند */
+  height: 2px;                 /* ضخامتِ نازک */
+  min-width: 20px;
+  background: rgba(255,255,255,0.75); /* رنگ سفید با کمی مات بودن */
+  border-radius: 1px;
+  align-self: center;
+  box-shadow: none;            /* حذف درخشش/بلور */
+  opacity: 0.95;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+/* اگر خواستی کمی تیره‌تر باشه (برای پس‌زمینهٔ سفید) از این استفاده کن:
+background: rgba(230,230,230,0.85);
+*/
+
+.contact-box-right {
+  display: flex;
+  justify-content: flex-end; /* سمت راست */
+  padding: 7rem; /* فاصله کمتر و متناسب */
+}
+
+.contact-card-neon {
+  background: rgba(30,30,30,0.9); /* پس‌زمینه تیره و ساده */
+  border: 1px solid #00bfff; /* آبی ملایم */
+  border-radius: 16px;
+  padding: 2rem; /* مثل کارت پروژه */
+  color: #f1f1f1; /* متن روشن و حرفه‌ای */
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0,191,255,0.3); /* سایه ملایم */
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.contact-card-neon:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,191,255,0.4);
+  border-color: #00bfff;
+}
+
+.contact-card-neon h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #00bfff; /* رنگ عنوان ساده و حرفه‌ای */
+  text-align: right;
+}
+
+.contact-card-neon p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: right;
+  color: #e0e0e0; /* متن پاراگراف ساده و روشن */
+}
+
+.contact-card-neon a {
+  color: #00bfff; /* لینک ملایم */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-card-neon a:hover {
+  transform: scale(1.05);
+}
+
+
+
