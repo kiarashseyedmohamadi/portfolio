@@ -339,4 +339,191 @@ background: rgba(230,230,230,0.85);
 }
 
 
+#skillsstar
+.skill-item {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.skill-name {
+  flex: 1;
+  text-align: left;
+}
+
+.skill-stars .star.filled {
+  color: #f5c518; /* طلایی */
+}
+
+.skill-stars .star.empty {
+  color: #cfcfcf;
+}
+
+
+
+/* ====== Styles for Skills card (paste into style.css) ====== */
+
+.contact-card-neon {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  /* اگر رنگ پس‌زمینه‌ی Blog فرق داره همین رو تغییر بده */
+  background: #0f1724;
+  color: #f1f1f1;
+}
+
+/* هر ردیف مهارت - چینش افقی: اسم اول، ستاره‌ها دوم */
+.skills-grid .skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* اسم سمت چپ، ستاره‌ها سمت راست */
+  direction: ltr; /* مهم! چون متن فارسی هست ولی می‌خوای چینش LTR باشه */
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+
+/* حذف خط برای آخرین آیتم */
+.skills-grid .skill-row:last-child {
+  border-bottom: none;
+}
+
+/* اسم مهارت: ابتدا قرار گیرد و به سمت چپ بچسبد */
+.skills-grid .skill-name {
+  font-weight: 600;
+  /* فاصله منطقی تا ستاره — margin-inline-end کار می‌کند در RTL/LTR */
+  margin-inline-end: auto;
+  text-align: left; /* اصرار بر چپ چین بودن نام (اگر خواستی راست باشه این را حذف کن) */
+  min-width: 110px; /* عرض حداقل تا ستاره‌ها نظم داشته باشند (اختیاری) */
+}
+
+/* کانتینر ستاره‌ها */
+.skills-grid .skill-stars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* رنگ ستاره‌های پر و خالی */
+.skills-grid .skill-stars .star.filled,
+.skills-grid .skill-stars .star.filled svg {
+  color: #f5c518 !important;   /* زرد طلایی */
+  fill: #f5c518 !important;
+}
+
+.skills-grid .skill-stars .star.empty,
+.skills-grid .skill-stars .star.empty svg {
+  color: #bcbcbc !important;   /* خاکستری */
+  fill: #bcbcbc !important;
+  opacity: 0.95;
+}
+
+/* اندازه و فاصله ستاره‌ها */
+.skills-grid .skill-stars .star {
+  font-size: 1.05rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+
+
+
+.contact-card-neon h4 {
+  color: #00ffff; /* آبی نئونی قوی */
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+
+/* #remove-bullets: حذف نقطه‌های جلوی آیتم‌های لیست در contact-card-neon */
+.contact-card-neon ul {
+  list-style: none; /* حذف نقطه‌ها */
+  padding-left: 0;  /* حذف فاصله اضافی از سمت چپ */
+  margin-left: 0;   /* مطمئن شدن از حذف فاصله */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === Slider === */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; /* عریض‌تر */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff; /* افکت نئونی */
+}
+
+.slider-card {
+  display: none;
+  width: 100%;
+  height: 500px; /* بزرگ‌تر */
+  border-radius: 20px;
+}
+
+.slider-card.active {
+  display: block;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* دکمه‌های ورق زدن */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,255,255,0.3);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.slider-btn:hover {
+  background: #0ff;
+  color: #000;
+  transform: scale(1.2);
+}
+
+.slider-btn.prev {
+  left: 15px;
+}
+
+.slider-btn.next {
+  right: 15px;
+}
+
+
+
+
+
+
 

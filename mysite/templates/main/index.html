@@ -10,50 +10,79 @@
 
       <!-- متن سمت چپ و وسط -->
       <div class="d-flex flex-column justify-content-center" style="flex: 1;">
-        <h1 class="fw-bold mb-3 hero-title"><div class="title-row"><span class="title-first">My</span><span class="title-line" aria-hidden="true"></span></div><span class="title-second">Portfolio</span></h1>
+        <h1 class="fw-bold mb-3 hero-title">
+          <div class="title-row">
+            <span class="title-first">My</span>
+            <span class="title-line" aria-hidden="true"></span>
+          </div>
+          <span class="title-second">Portfolio</span>
+        </h1>
         <p class="lead text-muted mb-4">{{ main.subtitle|default:"سلام! من کیارش سیدمحمدی هستم، عاشق کدنویسی و خلق پروژه‌های وب. با Django و Python پروژه می‌سازم." }}</p>
-        <a href="#projects" class="btn btn-dark btn-lg">شروع همکاری</a>
+        <a href="{% url 'main:contact'%}" class="btn btn-dark btn-lg">شروع همکاری</a>
       </div>
 
       <!-- تصویر سمت راست با فاصله خیلی کم -->
       <div style="flex: 1; display: flex; justify-content: flex-end;">
         <img src="/media/images/myphoto.jpg" alt="My Profile" class="profile-image">
-
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- Slider -->
+{% include "sliders/slider.html" %}
+
 <!-- Projects -->
 <section id="projects" class="section">
   <div class="container text-center">
-    <h2 class="fw-bold mb-5">نمونه‌کارها</h2>
+    <h2 class="fw-bold mb-5">Projects</h2>
     <div class="row g-5">
       <div class="col-md-4">
-        <div class="project-card p-4">
-          <h5 class="fw-bold mb-3">پروژه ۱</h5>
-          <p class="text-muted">توضیح کوتاه درباره پروژه.</p>
-        </div>
+        <a href="https://github.com/kiarashseyedmohamadi/SuperMarcket" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="project-card p-4">
+            <h5 class="fw-bold mb-3">پروژه ۱</h5>
+            <p>Online Supermarket (HTML Template)</p>
+          </div>
+        </a>
       </div>
       <div class="col-md-4">
-        <div class="project-card p-4">
-          <h5 class="fw-bold mb-3">پروژه ۲</h5>
-          <p class="text-muted">توضیح کوتاه درباره پروژه.</p>
-        </div>
+        <a href="https://github.com/kiarashseyedmohamadi/drf-supermarket" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="project-card p-4">
+            <h5 class="fw-bold mb-3">پروژه ۲</h5>
+            <p>Online Supermarket (DRF)</p>
+          </div>
+        </a>
       </div>
       <div class="col-md-4">
-        <div class="project-card p-4">
-          <h5 class="fw-bold mb-3">پروژه ۳</h5>
-          <p class="text-muted">توضیح کوتاه درباره پروژه.</p>
-        </div>
+        <a href="https://github.com/kiarashseyedmohamadi/fastapi-ecommerce" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="project-card p-4">
+            <h5 class="fw-bold mb-3">پروژه ۳</h5>
+            <p>FastAPI Ecommerce</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://github.com/kiarashseyedmohamadi/EventBook" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="project-card p-4">
+            <h5 class="fw-bold mb-3">پروژه ۴</h5>
+            <p>EventBook Public</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="http://127.0.0.1:8000/" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="project-card p-4">
+            <h5 class="fw-bold mb-3">پروژه ۵</h5>
+            <p>Portfolio</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
-
-<!-- Contact Neon Box Above Footer -->
 <section class="contact-box-right">
   <div class="contact-card-neon">
     <h3>به دنبال یک برنامه‌نویس کارآموز هستید؟</h3>
@@ -65,9 +94,4 @@
     </p>
   </div>
 </section>
-
-
-
-
-
 {% endblock %}

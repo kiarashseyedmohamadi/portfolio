@@ -8,9 +8,10 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
           <a class="nav-link" href="{% url 'main:projects' %}">Projects</a>
-          <li class="nav-item"><a class="nav-link" href="{% url "main:skills" %}">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url "skills:skills-list" %}">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url "main:resume" %}">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url "main:blog" %}">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url "blog:bloglist" %}">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url "blog:bloglist" %}">Feedback</a></li>
         </ul>
       </div>
     </div>

@@ -1,10 +1,13 @@
 from django.shortcuts import render
-
-
 from django.views.generic import TemplateView
+from apps.slider.models import Slider
 
-class IndexView(TemplateView):
-    template_name = 'main/index.html' 
+
+def index(request):
+    sliders = Slider.objects.filter(is_active=True).order_by('create_at')
+    return render(request, "main/index.html", {"sliders": sliders})
+
+
     
 
 class ContactView(TemplateView):
@@ -18,11 +21,7 @@ class AboutView(TemplateView):
 class ResumeView(TemplateView):
     template_name = 'header/resume.html'
 
-class SkillsView(TemplateView):
-    template_name = 'header/skills.html'
-
 class ProjectsView(TemplateView):
     template_name = 'header/projects.html'
 
-class BlogView(TemplateView):
-    template_name = 'header/blog.html'
+
