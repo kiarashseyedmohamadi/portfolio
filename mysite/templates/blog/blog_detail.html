@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="contact-card-neon mx-auto p-4 text-start">
+    <h2 class="fw-bold mb-3 text-center">{{ blog.title }}</h2>
+    {% if blog.image %}
+      <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="img-fluid mb-3 rounded">
+    {% endif %}
+    <div>
+      {{ blog.content|linebreaks }}
+    </div>
+  </div>
+</div>
+{% endblock %}

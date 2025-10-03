@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}کامنت‌ها{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width:800px; margin:auto; padding:50px 20px;">
+
+  <!-- نمایش پیام‌ها -->
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} mb-3" 
+           style="border:1px solid #0ff; border-radius:10px; background:#111; color:#0ff;">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <h2 class="fw-bold mb-4" style="color:#0ff;">کامنت‌ها</h2>
+
+  <!-- نمایش کامنت‌ها -->
+  {% for comment in comments %}
+    <div class="comment-box p-3 mb-3" 
+         style="border:1px solid #0ff; border-radius:10px; background:#111; color:#0ff;">
+      <p>{{ comment.text }}</p>
+      <small style="opacity:0.7;">ارسال شده توسط: {{ comment.email }}</small>
+    </div>
+  {% empty %}
+    <p style="color:#999;">هیچ کامنتی ثبت نشده است.</p>
+  {% endfor %}
+
+  <hr style="border-color:#0ff;">
+
+  <!-- فرم ارسال کامنت -->
+  {% if verified_email %}
+    <h3 class="fw-bold mb-3" style="color:#0ff;">ارسال کامنت جدید</h3>
+    <div class="contact-card-neon p-4 mb-5" 
+         style="border:1px solid #0ff; border-radius:10px; background:#111; color:#0ff;">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">ارسال</button>
+      </form>
+    </div>
+  {% else %}
+    <h3 class="fw-bold mb-3" style="color:#0ff;">برای ارسال کامنت ابتدا ایمیل خود را تایید کنید</h3>
+    <div class="contact-card-neon p-4 mb-5" 
+         style="border:1px solid #0ff; border-radius:10px; background:#111; color:#0ff;">
+      <form method="post" action="{% url 'comments:send_verify_email' %}">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="ایمیل خود را وارد کنید" required class="form-control mb-3">
+        <button type="submit" class="btn btn-warning">ارسال لینک تایید</button>
+      </form>
+    </div>
+  {% endif %}
+
+</div>
+{% endblock %}

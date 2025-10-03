@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}لیست کامنت‌ها{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container text-center" style="max-width:800px; margin:auto; padding:50px 20px;">
+
+    <!-- اگر ایمیل تایید شده بود فرم کامنت -->
+    {% if verified_email %}
+      <h3 class="fw-bold mb-4">ارسال کامنت جدید</h3>
+      <div class="contact-card-neon mx-auto text-center p-4">
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary mt-3">ارسال</button>
+        </form>
+      </div>
+    {% else %}
+      <!-- اگر ایمیل تایید نشده بود فقط فرم ایمیل -->
+      <h3 class="fw-bold mb-4">برای ارسال کامنت، ابتدا ایمیل خود را تایید کنید</h3>
+      <div class="contact-card-neon mx-auto text-center p-4">
+        <form method="post" action="{% url 'comments:send_verify_email' %}">
+          {% csrf_token %}
+          <input type="email" name="email" placeholder="ایمیل خود را وارد کنید" required class="form-control mb-3">
+          <button type="submit" class="btn btn-warning">ارسال لینک تایید</button>
+        </form>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+
+<div class="slider-container">
+    {% for slide in sliders %}
+    <div class="slider-card {% if forloop.first %}active{% endif %}">
+        <img src="{{ slide.image.url }}" alt="{{ slide.title }}" class="slider-image">
+    </div>
+    {% endfor %}
+
+    <!-- دکمه‌های ورق زدن -->
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
+</div>
+
+<script>
+    let slides = document.querySelectorAll('.slider-card');
+    let current = 0;
+
+    function showSlide(index) {
+        slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+    });
+
+    setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }, 4000);
+</script>

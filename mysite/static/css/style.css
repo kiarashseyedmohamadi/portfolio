@@ -524,6 +524,33 @@ background: rgba(230,230,230,0.85);
 
 
 
+/* متن داخل فوتر */
+.footer-top-left {
+    font-size: 65px;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #0cc; /* رنگ نئونی فیروزه‌ای */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow: 
+        0 0 2px #066,
+        0 0 4px #088,
+        0 0 6px #0aa;
+    animation: neon-softpulse 8s ease-in-out infinite; /* خیلی نرم و طولانی */
+}
 
-
-
+@keyframes neon-softpulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 2px #066,
+            0 0 4px #088,
+            0 0 6px #0aa;
+    }
+    50% {
+        text-shadow: 
+            0 0 3px #077,
+            0 0 5px #099,
+            0 0 7px #0bb;
+    }
+}

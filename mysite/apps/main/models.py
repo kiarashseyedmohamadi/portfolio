@@ -105,5 +105,19 @@ class Contact(models.Model):
 
 #-----------
 
+#-----------
 
+
+#تعداد بازدید سایت
+class Visit(models.Model):
+    count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"تعداد بازدید: {self.count}"
+
+    class Meta:
+        verbose_name = 'تعداد بازدید'
+        verbose_name_plural = 'تعداد بازدیدها'
+
+    
 

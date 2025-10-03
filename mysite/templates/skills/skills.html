@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Skills{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">My Skills</h2>
+
+    <div class="contact-card-neon mx-auto text-start">
+      <div class="skills-grid">
+        {% comment %}
+          اگر skills از مدل میاد و queryset هست، بهتر در view آن را مرتب کنی:
+          Skill.objects.all().order_by('-rating')
+          و در template فقط از {% for skill in skills %} استفاده کن.
+          اگر لیست دیکشنری داری، همینجا dictsortreversed استفاده شده.
+        {% endcomment %}
+
+        {% for skill in skills|dictsortreversed:"rating" %}
+          <div class="skill-row">
+            <div class="skill-name">{{ skill.name }}</div>
+
+            <div class="skill-stars" aria-hidden="true">
+              {% for _ in "12345"|make_list %}
+                {% if forloop.counter <= skill.rating %}
+                  <i class="fa-solid fa-star star filled"></i>
+                {% else %}
+                  <i class="fa-regular fa-star star empty"></i>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% empty %}
+          <p class="text-center">No skills found.</p>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

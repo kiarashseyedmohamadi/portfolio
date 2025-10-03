@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}بلاگ‌ها{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">بلاگ‌ها</h2>
+
+    {% if blogs %}
+      <div class="row justify-content-center">
+        {% for blog in blogs %}
+        <div class="col-md-6 mb-4">
+          <div class="contact-card-neon mx-auto text-center p-4">
+            {% if blog.image %}
+              <img src="{{ blog.image.url }}" class="img-fluid mb-3 rounded" alt="{{ blog.title }}">
+            {% endif %}
+            <h5 class="fw-bold mb-3">{{ blog.title }}</h5>
+            <p class="mb-3">{{ blog.summary|truncatewords:30 }}</p>
+            <a href="{% url 'blog:detail' blog.pk %}" class="btn btn-primary">ادامه مطلب</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-center">هیچ بلاگی وجود ندارد.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
